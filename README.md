@@ -65,11 +65,5 @@ Created a matrix to validate:
 * Returns by Fiscal Year
 * Revenue by Customer Segment
 
----
-
-## **Deliverables**
-
-* **.pbix file** with complete model
-* **Short summary (.txt/.docx)** covering schema, relationships, and issues
 
 
