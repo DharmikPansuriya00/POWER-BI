@@ -29,7 +29,7 @@ A complete Power BI modeling project demonstrating **Star Schema**, **fact/dimen
 ### **🧩 Full Data Model Diagram**
 
 [Click here to open Data Models
-]([https://github.com/DharmikPansuriya00/all-ss/blob/main/Screenshot%202025-12-11%20164949.png])
+](https://github.com/DharmikPansuriya00/all-ss/blob/main/Screenshot%202025-12-11%20165023.png)
 
 ---
 
