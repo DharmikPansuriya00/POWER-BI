@@ -1,8 +1,4 @@
-Here is the **short version of the README file** — clean, simple, and GitHub-ready:
-
----
-
-# **README – Data Modeler Project**
+Data Modeler Project**
 
 ## **Objective**
 
