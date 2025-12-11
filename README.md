@@ -8,7 +8,7 @@ A complete Power BI modeling project demonstrating **Star Schema**, **fact/dimen
 
 ### **📊 Sales by Category / Region**
 
-![Sales Category Screenshot](attachment:37045da6-fb43-4441-991e-9f8693b6e72f.png)
+![Sales Category Screenshot](attachment:[37045da6-fb43-4441-991e-9f8693b6e72f.png](https://github.com/DharmikPansuriya00/POWER-BI/issues/1))
 
 ---
 
