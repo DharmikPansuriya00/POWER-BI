@@ -1,65 +1,151 @@
-Data Modeler Project**
+# 📘 Data Modeler Project – Power BI Star Schema Design
 
-## **Objective**
-
-Build a clean, normalized **Star Schema** data model in Power BI using multiple fact and dimension tables. All transformation is done in **Power Query** and all relationships in **Model View**.
+A complete Power BI modeling project demonstrating **Star Schema**, **fact/dimension modeling**, **inactive relationships**, **hierarchies**, and **data cleaning**.
 
 ---
 
-## **Dataset Used**
+# 📸 Project Screenshots
 
-* **Sales_Fact** (SalesID, CustomerID, ProductID, RegionID, DateKey, Qty, Revenue, Discount)
-* **Customer_Dim** (CustomerID, FullName, Age, Gender, Segment)
-* **Product_Dim** (ProductID, ProductName, Category, Subcategory, Brand)
-* **Region_Dim** (RegionID, Country, State, City)
-* **Date_Dim** (DateKey, Date, Month, Quarter, Year, Fiscal Year)
-* **Returns_Fact** (ReturnID, SalesID, ReturnDateKey, Reason)
+### **📊 Sales by Category / Region**
+
+![Sales Category Screenshot](attachment:37045da6-fb43-4441-991e-9f8693b6e72f.png)
 
 ---
 
-## **Modeling Steps**
+### **🔁 Returns by Fiscal Year**
 
-* Cleaned all files in **Power Query** (data types, removed blanks, formatted fields).
-* Loaded all tables into the model.
-* Created relationships:
-
-  * Sales_Fact → Customer_Dim
-  * Sales_Fact → Product_Dim
-  * Sales_Fact → Region_Dim
-  * Sales_Fact → Date_Dim
-  * Returns_Fact → Sales_Fact
-  * Returns_Fact → Date_Dim (**inactive**)
+*(Included inside the same screenshot above – return matrix visible)*
 
 ---
 
-## **Schema Design**
+### **💰 Revenue by Customer Segment**
 
-* **Star Schema** with Sales_Fact as central table.
-* **Returns_Fact** added as an additional fact table (snowflake extension).
-* All relationships are **1-to-Many**, **single direction**.
-* Inactive path used for ReturnDateKey → Date_Dim.
+*(Included inside the same screenshot above – revenue matrix visible)*
 
 ---
 
-## **Enhancements**
+### **🧩 Full Data Model Diagram**
 
-* Proper data formats (currency, whole numbers, dates).
-* Data categories applied (City, Country, Product).
-* Hierarchies built:
-
-  * Date: Year → Quarter → Month → Date
-  * Region: Country → State → City
-  * Product: Category → Subcategory → ProductName
+![Data Model](attachment:6a80214f-df5e-4826-9c8b-19835b22e094.png)
 
 ---
 
-## **Verification**
+# 📌 Project Objective
 
-Created a matrix to validate:
+Build an optimized **Star Schema data model** in Power BI using multiple fact and dimension tables.
 
-* Sales by Product Category & Region
-* Returns by Fiscal Year
-* Revenue by Customer Segment
+🎯 Key Skills Covered:
 
+* ⭐ Star Schema Design
+* 🔗 Relationship Management
+* 🧠 Cardinality & Filter Flow
+* ⏳ Inactive Relationship Handling
+* 🧱 Fact vs. Dimension Tables
+* 🗂 Hierarchies & Data Categorization
+* ⚙ Best Modeling Practices
 
+---
 
+# 📂 Dataset Summary
+
+| File                  | Description                                   |
+| --------------------- | --------------------------------------------- |
+| **Sales_Fact.xlsx**   | Main fact table (Quantity, Revenue, Discount) |
+| **Customer_Dim.xlsx** | Customer demographic & segment data           |
+| **Product_Dim.xlsx**  | Product details: Category, Subcategory, Brand |
+| **Region_Dim.xlsx**   | Location hierarchy: Country → State → City    |
+| **Date_Dim.xlsx**     | Calendar + Fiscal year attributes             |
+| **Returns_Fact.xlsx** | Return transactions & reasons                 |
+
+---
+
+# 🧪 Power Query Transformations
+
+✔ Removed blank/duplicate rows
+✔ Applied correct data types (Whole Number, Text, Date, Currency)
+✔ Verified unique primary keys
+✔ Cleaned column names
+✔ Loaded tables to Model View
+
+---
+
+# 🌐 Data Model Architecture
+
+### **⭐ Central Fact Table**
+
+* **Sales_Fact**
+
+### **🔹 Dimension Tables**
+
+* Customer_Dim
+* Product_Dim
+* Region_Dim
+* Date_Dim
+
+### **🔸 Secondary Fact Table**
+
+* **Returns_Fact** (connected to Sales_Fact & Date_Dim)
+
+---
+
+# 🔗 Relationship Summary
+
+| From         | To           | Key           | Type | Filter Direction |
+| ------------ | ------------ | ------------- | ---- | ---------------- |
+| Sales_Fact   | Customer_Dim | CustomerID    | 1:*  | Single           |
+| Sales_Fact   | Product_Dim  | ProductID     | 1:*  | Single           |
+| Sales_Fact   | Region_Dim   | RegionID      | 1:*  | Single           |
+| Sales_Fact   | Date_Dim     | DateKey       | 1:*  | Single           |
+| Returns_Fact | Sales_Fact   | SalesID       | *:1  | Single           |
+| Returns_Fact | Date_Dim     | ReturnDateKey | *:1  | **Inactive** ⭐   |
+
+🔄 **All relationships are single-direction** (best practice).
+⭐ Inactive relationship used for ReturnDateKey → DateDim.
+
+---
+
+# 📦 Hierarchies
+
+### 📅 **Date Hierarchy**
+
+* Year → Quarter → Month → Date
+
+### 🌍 **Region Hierarchy**
+
+* Country → State → City
+
+### 📦 **Product Hierarchy**
+
+* Category → Subcategory → Product Name
+
+---
+
+# 📊 Verification Visuals
+
+✔ Sales by **Product Category → Region**
+✔ Returns grouped by **Fiscal Year**
+✔ Revenue by **Customer Segment**
+
+These matrices validate that dimension filters flow correctly across fact tables.
+
+---
+
+# 📁 Deliverables
+
+* ✔ **Power BI .pbix file** (cleaned tables + modeling + visuals)
+* ✔ **README documentation** (this file)
+* ✔ Optional: Summary in **.txt/.docx** format
+
+---
+
+# 🎉 Final Notes
+
+This project demonstrates mastery of:
+
+* Dimensional modeling
+* Star & Snowflake architecture
+* Complex relationships
+* Clean ETL practices
+* Professional data modeling in Power BI
+
+If you want this README **converted to PDF, DOCX, or GitHub Markdown with auto-upload instructions**, just tell me!
